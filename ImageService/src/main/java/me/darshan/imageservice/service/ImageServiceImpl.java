@@ -12,8 +12,8 @@ import java.nio.file.Paths;
 
 @Service
 public class ImageServiceImpl implements ImageService {
-    // Assuming images are stored in a directory named "images" within the project directory
-    private static final String IMAGE_DIRECTORY = "C:/Users/drath/Desktop/images/"; // Update with your images directory's absolute path
+    //changed the file path for images
+    private static final String IMAGE_DIRECTORY = "C:/Users/drath/Desktop/images/";
 
     @Autowired
     private ImageRepository imageRepository;

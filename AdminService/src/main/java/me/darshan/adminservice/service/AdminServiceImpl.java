@@ -21,8 +21,8 @@ import java.util.List;
 
 @Service
 public class AdminServiceImpl implements AdminService {
-    // Assuming images are stored in a directory named "images" within the project directory
-    private static final String IMAGE_DIRECTORY = "C:/Users/drath/Desktop/images/"; // Update with your images directory's absolute path
+    //update the path according to system
+    private static final String IMAGE_DIRECTORY = "C:/Users/drath/Desktop/images/";
 
     private final OrderRepository orderRepository;
     private final ProductRepository productRepository;
@@ -46,6 +46,7 @@ public class AdminServiceImpl implements AdminService {
                 new ProductNotFoundException("Product with id " + id + " not found"));
     }
 
+    //method to create new product
     @Override
     @Transactional
     public Product createProduct(ProductDTO productDTO) {
@@ -63,6 +64,7 @@ public class AdminServiceImpl implements AdminService {
         return productRepository.save(product);
     }
 
+    //to delete product
     @Override
     public void deleteProduct(Long id) {
         if (!productRepository.existsById(id)) {

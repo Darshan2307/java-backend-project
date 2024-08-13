@@ -38,8 +38,6 @@ public class ProductServiceImpl implements ProductService {
     @Transactional
     public Product createProduct(ProductDTO productDTO) {
         String imageIdString = productDTO.getImageId();
-
-        System.out.println("hello--------------------->");
         Image image = imageRepository.findById(Long.parseLong(imageIdString))
                 .orElseThrow(() -> new ImageNotFoundException("Image with id " + imageIdString + " not found"));
 
